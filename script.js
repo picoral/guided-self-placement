@@ -2,8 +2,7 @@ $(document).ready(function() {
     $('button#start-btn').click(() => $('#main').show() );
 
     $('input[name="mathRequire"]').change(checkMathReq);
-    $('input[name="section"]').change(checkSection);
-    $('input[name="wantNoExp"]').change(checkWantNoExp);
+    
     $('input[name="previousCourse"]').change(checkPrevCourse);
     $('input[name="previousExp"]').change(checkPrevExp);
     $('select[name="lastCourse"]').change(checkLastCouse);
@@ -20,29 +19,11 @@ function checkMathReq(event) {
     if (resp == 'No') {
         showQuestion(event, $(event.target), $('#result-101'));
     } else {
-        showQuestion(event, $(event.target), $('#section1pm2pm'));
-    }
-}
-
-function checkSection(event) {
-    let resp = $('input[name="section"]:checked').val();
-    console.log(resp);
-    if (resp == '2pm') {
-        showQuestion(event, $(event.target), $('#result-110-2pm'));
-    } else {
-        showQuestion(event, $(event.target), $('#wantPrevExpClass'));
-    }
-}
-
-function checkWantNoExp(event) {
-    let resp = $('input[name="wantNoExp"]:checked').val();
-    console.log(resp);
-    if (resp == 'Yes') {
-        showQuestion(event, $(event.target), $('#result-110-noexp'));
-    } else {
         showQuestion(event, $(event.target), $('#prevCourse'));
     }
 }
+
+
 
 function checkPrevCourse(event) {
     let resp = $('input[name="previousCourse"]:checked').val();
@@ -92,18 +73,11 @@ function checkLastCouse(event) {
 
 
 function checkAPGrade(event) {
-    $('input[name="142Score"]').prop("checked", false);
-    $('input[name="ibScore"]').prop("checked", false);
 
     let grade = $('input[name="apScore"]:checked').val();
     console.log(grade);
     switch (grade) {
-        case '3':
-          showQuestion(event, $(event.target), $('#topics-110'));
-          break;
         case '4':
-          showQuestion(event, $(event.target), $('#topics-110'));
-          break;
         case '5':
           showQuestion(event, $(event.target), $('#result-120'));
           break;
@@ -149,7 +123,6 @@ function showQuestion(event, prev, target) {
 
         if (target.hasClass('result')) {
             $('#result-hidden').text(target.attr('id'));
-            saveData(event)
         }
     }
 }
@@ -158,11 +131,3 @@ function showNextQuestion(event, prev) {
     showQuestion(event, prev, prev.parents('.question').next('.question'));
 }
 
-
-function saveData(e) {
-    const action = "https://script.google.com/macros/s/AKfycbxRVJ8KIzKBiNzI71b1L3cVv0idoR8lpec0Zpkk-mJJvTw18Nr_rlcB31Hc-2nk07Zyqg/exec"
-
-    e.preventDefault();
-    const data = new FormData($('#main').get()[0]);
-    fetch(action, {method: 'POST', body: data,})
-}

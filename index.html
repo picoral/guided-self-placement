@@ -70,7 +70,7 @@
         
         <div class="mb-3 question" id="mathReq">
             <label class="form-label" for="mathRequire">Do you have the math requirement?</label>
-            <p>PPL 60+ or SAT I MSS 640+ or ACT MATH 26+ or (C or higher in [CSC 101 or MATH 112 or MATH 108]) or  one courses from MATH 113, 116, 120R, 122A, 122B, or 125.  Test scores expire after 2 years.</p>
+            <p>The math requirement is satisfied by either a placement test (PPL 60+ or SAT I MSS 640+ or ACT MATH 26+) or by a C or higher grade in MATH 112 or MATH 108, or one courses from MATH 113, 116, 120R, 122A, 122B, or 125.</p>
             <div class="form-check">
                 <input autocomplete="off" class="form-check-input" type="radio" name="mathRequire" id="mathRequireYes" value="Yes">
                 <label class="form-check-label" for="mathRequireYes">Yes</label>
@@ -82,31 +82,6 @@
         </div>
         
         
-        
-        <div class="mb-3 question" id="section1pm2pm"  style="display:none">
-            <label class="form-label" for="section">What section time works best for you?</label>
-            <div class="form-check">
-                <input autocomplete="off" class="form-check-input" type="radio" name="section" id="section1pm" value="1pm">
-                <label class="form-check-label" for="section1pm">1pm</label>
-            </div>
-            <div class="form-check">
-                <input autocomplete="off" class="form-check-input" type="radio" name="section" id="section2pm" value="2pm">
-                <label class="form-check-label" for="section2pm">2pm</label>
-            </div>
-        </div>
-        
-        
-        <div class="mb-3 question" id="wantPrevExpClass"  style="display:none">
-            <label class="form-label" for="wantNoExp">Do you want to be in class where no prior experience in coding is presumed?</label>
-            <div class="form-check">
-                <input autocomplete="off" class="form-check-input" type="radio" name="wantNoExp" id="wantNoExpYes" value="Yes">
-                <label class="form-check-label" for="wantNoExpYes">Yes</label>
-            </div>
-            <div class="form-check">
-                <input autocomplete="off" class="form-check-input" type="radio" name="wantNoExp" id="wantNoExpNo" value="No">
-                <label class="form-check-label" for="wantNoExpNo">No</label>
-            </div>
-        </div>
         
         <div class="mb-3 question" id="prevCourse" style="display:none">
             <label class="form-label" for="previousCourse">Have you taken a previous computer science course?</label>
@@ -236,380 +211,6 @@
             </div>
             
         </div>
-
-  
-
-        <div class="mb-3 question" id="p_121p1" style="display:none">
-            <label for="p_121p1">Read and work on this problem, then answer the next question: <b>What is the output after executing the following code?</b></label><br/>
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-pills" id="p_121p1-lang" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="p_121p1-java-tab" data-bs-toggle="tab" data-bs-target="#p_121p1-java" type="button" role="tab" aria-controls="p_121p1-java" aria-selected="true">Java</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="p_121p1-python-tab" data-bs-toggle="tab" data-bs-target="#p_121p1-python" type="button" role="tab" aria-controls="p_121p1-python" aria-selected="false">Python</button>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <!-- **JAVA** -->
-                <div class="tab-pane active" id="p_121p1-java" role="tabpanel" aria-labelledby="p_121p1-java-tab">
-                    <div class="row">
-                        <div class="col-7" id="p_121p1-java-problem-col">
-                            <pre><code class="language-java">public class Example {
-    public static void main(String[] args) {
-        figure(8);
-    }
-
-    public static void figure(int max) {
-        for (int line = 1; line &lt;= max; line++) {
-            for (int dots = 1; dots &lt;= -1 * line + max; dots++) {
-                System.out.print(".");
-            }
-            System.out.println(line);
-        }
-    }
-}</code></pre>
-                        </div>
-
-                        <div class="col-4 toggle-solutions" id="p_121p1-java-solution-col">
-                            <!-- **SOLUTION** -->
-                            <p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#p_121p1-java-solution" role="button" aria-expanded="false" aria-controls="p_121p1-java-solution">
-                                Toggle solution
-                            </button>
-                            </p>
-                            <div class="collapse" id="p_121p1-java-solution">
-                                <div class="card card-body">
-                                    <samp>
-                                        .......1<br/>
-                                        ......2<br/>
-                                        .....3<br/>
-                                        ....4<br/>
-                                        ...5<br/>
-                                        ..6<br/>
-                                        .7<br/>
-                                        8
-                                    </samp>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- **PYTHON** -->
-                <div class="tab-pane" id="p_121p1-python" role="tabpanel" aria-labelledby="p_121p1-python-tab">
-                    <div class="row">
-                        <div class="col-7" id="p_121p1-python-problem-col">
-                            <pre><code class="language-python">def figure(max_num):
-    for line in range(1, max_num + 1):
-        for dots in range(1, max_num - line + 1):
-            print(".", end="")
-        print(line)
-
-figure(8)</code></pre>
-                        </div>
-
-                        <div class="col-4 toggle-solutions" id="p_121p1-python-solution-col">
-                            <!-- **SOLUTION** -->
-                            <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#p_121p1-python-solution" role="button" aria-expanded="false" aria-controls="p_121p1-python-solution">
-                                Toggle solution
-                            </a>
-                            </p>
-                            <div class="collapse" id="p_121p1-python-solution">
-                                <div class="card card-body">
-                                    <samp>
-                                        .......1<br/>
-                                        ......2<br/>
-                                        .....3<br/>
-                                        ....4<br/>
-                                        ...5<br/>
-                                        ..6<br/>
-                                        .7<br/>
-                                        8
-                                    </samp>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="mb-3" id="p_121p1react" style="display:none">
-                <label class="form-label" for="p_121p1react">Which of the following best describes your experience with the preceding problem?</label>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p1react" id="p_121p1react1" value="1">
-                    <label class="form-check-label" for="p_121p1react1">I did not understand the problem or did not know how to begin solving it.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p1react" id="p_121p1react2" value="2">
-                    <label class="form-check-label" for="p_121p1react2">I was able to begin solving the problem but got stuck.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p1react" id="p_121p1react3" value="3">
-                    <label class="form-check-label" for="p_121p1react3">I was able to complete the problem but struggled greatly.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p1react" id="p_121p1react4" value="4">
-                    <label class="form-check-label" for="p_121p1react4">I was able to solve the problem with a little difficulty.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p1react" id="p_121p1react5" value="5">
-                    <label class="form-check-label" for="p_121p1react5">I was able to solve the problem with no difficulty.</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-3 question" id="p_121p2" style="display:none">
-            <label for="p_121p2">Read and work on this problem, then answer the next question: <b>What is the output after executing the following code?</b></label><br/>
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-pills" id="p_121p2-lang" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="p_121p2-java-tab" data-bs-toggle="tab" data-bs-target="#p_121p2-java" type="button" role="tab" aria-controls="p_121p2-java" aria-selected="true">Java</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="p_121p2-python-tab" data-bs-toggle="tab" data-bs-target="#p_121p2-python" type="button" role="tab" aria-controls="p_121p2-python" aria-selected="false">Python</button>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <!-- **JAVA** -->
-                <div class="tab-pane active" id="p_121p2-java" role="tabpanel" aria-labelledby="p_121p2-java-tab">
-                    <div class="row">
-                        <div class="col-7" id="p_121p2-java-problem-col">
-                            <pre><code class="language-java">public class Example {
-    public static void main(String[] args) {
-        String[] list = {"hello", "banana", "lime", "lemon", "apple", "strawberry", "grape"};
-        boolean mystery1 = mystery(3, list);
-        System.out.println("Mystery 1: " + mystery1);
-        boolean mystery2 = mystery(5, list);
-        System.out.println("Mystery 2: " + mystery2);
-    }
-
-    public static boolean mystery(int x, String[] list) {
-        for (int i = 0; i &lt; list.length; i++) {
-            if (list[i].length() &lt; x) {
-                return true;
-            }
-        }
-        return false;
-    }
-}</code></pre>
-                        </div>
-
-                        <div class="col-4 toggle-solutions" id="p_121p2-java-solution-col">
-                            <!-- **SOLUTION** -->
-                            <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#p_121p2-java-solution" role="button" aria-expanded="false" aria-controls="p_121p2-java-solution">
-                                Toggle solution
-                            </a>
-                            </p>
-                            <div class="collapse" id="p_121p2-java-solution">
-                                <div class="card card-body">
-                                    <samp>
-                                        Mystery 1: false<br/>
-                                        Mystery 2: true
-                                    </samp>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- **PYTHON** -->
-                <div class="tab-pane" id="p_121p2-python" role="tabpanel" aria-labelledby="p_121p2-python-tab">
-                    <div class="row">
-                        <div class="col-7" id="p_121p2-python-problem-col">
-                            <pre><code class="language-python">def mystery(x, values):
-    for el in values:
-        if len(el) &lt; x:
-            return True
-    return False
-
-
-values = ["hello", "banana", "lime", "lemon", "apple", "strawberry", "grape"]
-mystery1 = mystery(3, values)
-print("Mystery 1:", mystery1)
-mystery2 = mystery(5, values)
-print("Mystery 2:", mystery2)
-                            </code></pre>
-                        </div>
-
-                        <div class="col-4 toggle-solutions" id="p_121p2-python-solution-col">
-                            <!-- **SOLUTION** -->
-                            <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#p_121p2-python-solution" role="button" aria-expanded="false" aria-controls="p_121p2-python-solution">
-                                Toggle solution
-                            </a>
-                            </p>
-                            <div class="collapse" id="p_121p2-python-solution">
-                                <div class="card card-body">
-                                    <samp>
-                                        Mystery 1: False</br>
-                                        Mystery 2: True
-                                    </samp>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="mb-3" id="p_121p2react" style="display:none">
-                <label class="form-label" for="p_121p2react">Which of the following best describes your experience with the preceding problem?</label>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p2react" id="p_121p2react1" value="1">
-                    <label class="form-check-label" for="p_121p2react1">I did not understand the problem or did not know how to begin solving it.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p2react" id="p_121p2react2" value="2">
-                    <label class="form-check-label" for="p_121p2react2">I was able to begin solving the problem but got stuck.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p2react" id="p_121p2react3" value="3">
-                    <label class="form-check-label" for="p_121p2react3">I was able to complete the problem but struggled greatly.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p2react" id="p_121p2react4" value="4">
-                    <label class="form-check-label" for="p_121p2react4">I was able to solve the problem with a little difficulty.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p2react" id="p_121p2react5" value="5">
-                    <label class="form-check-label" for="p_121p2react5">I was able to solve the problem with no difficulty.</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-3 question" id="p_121p3" style="display:none">
-            <label for="p_121p3">Read and work on this problem, then answer the next question: <b>In one or two short sentences, describe what the following code does.</b></label><br/>
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-pills" id="p_121p3-lang" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="p_121p3-java-tab" data-bs-toggle="tab" data-bs-target="#p_121p3-java" type="button" role="tab" aria-controls="p_121p3-java" aria-selected="true">Java</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="p_121p3-python-tab" data-bs-toggle="tab" data-bs-target="#p_121p3-python" type="button" role="tab" aria-controls="p_121p3-python" aria-selected="false">Python</button>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <!-- **JAVA** -->
-                <div class="tab-pane active" id="p_121p3-java" role="tabpanel" aria-labelledby="p_121p3-java-tab">
-                    <div class="row">
-                        <div class="col-7" id="p_121p3-java-problem-col">
-                            <pre><code class="language-java">import java.util.*;
-
-public class Example {
-    public static void main(String[] args) {
-        inputLoop();
-    }
-
-    public static void inputLoop() {
-        Scanner console = new Scanner(System.in);
-        int totalChars = 0;
-        String sentinel = "quit";
-        System.out.print("Type a word (or \"" + sentinel + "\" to quit): ");
-        String word = console.next();
-        while (!word.equals(sentinel)) {
-            totalChars += word.length();
-            System.out.print("Type a word (or \"" + sentinel + "\" to quit): ");
-            word = console.next();
-        }
-        System.out.println("The total number of characters is: " + totalChars);
-    }
-}</code></pre>
-                        </div>
-
-                        <div class="col-4 toggle-solutions" id="p_121p3-java-solution-col">
-                            <!-- **SOLUTION** -->
-                            <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#p_121p3-java-solution" role="button" aria-expanded="false" aria-controls="p_121p3-java-solution">
-                                Toggle solution
-                            </a>
-                            </p>
-                            <div class="collapse" id="p_121p3-java-solution">
-                                <div class="card card-body">
-                                    <samp>
-                                        Reads in input from the user one word at a time until the word "quit" is entered, then prints the total number of characters entered
-                                        (not including the word "quit").
-                                    </samp>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- **PYTHON** -->
-                <div class="tab-pane" id="p_121p3-python" role="tabpanel" aria-labelledby="p_121p3-python-tab">
-                    <div class="row">
-                        <div class="col-7" id="p_121p3-python-problem-col">
-                            <pre><code class="language-python">def input_loop():
-    total_chars = 0;
-    sentinel = "quit";
-    prompt = 'Type a word (or "' + sentinel +'" to quit): '
-    word = input(prompt)
-    while word != sentinel:
-        total_chars += len(word)
-        word = input(prompt)
-    print("The total number of characters is:", total_chars)
-
-input_loop()</code></pre>
-                        </div>
-
-                        <div class="col-4 toggle-solutions" id="p_121p3-python-solution-col">
-                            <!-- **SOLUTION** -->
-                            <p>
-                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#p_121p3-python-solution" role="button" aria-expanded="false" aria-controls="p_121p3-python-solution">
-                                Toggle solution
-                            </a>
-                            </p>
-                            <div class="collapse" id="p_121p3-python-solution">
-                                <div class="card card-body">
-                                    <samp>
-                                        Reads in input from the user one word at a time until the word "quit" is entered, then prints the total number of characters entered
-                                        (not including the word "quit").
-                                    </samp>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-3" id="p_121p3react" style="display:none">
-                <label class="form-label" for="p_121p3react">Which of the following best describes your experience with the preceding problem?</label>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p3react" id="p_121p3react1" value="1">
-                    <label class="form-check-label" for="p_121p3react1">I did not understand the problem or did not know how to begin solving it.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p3react" id="p_121p3react2" value="2">
-                    <label class="form-check-label" for="p_121p3react2">I was able to begin solving the problem but got stuck.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p3react" id="p_121p3react3" value="3">
-                    <label class="form-check-label" for="p_121p3react3">I was able to complete the problem but struggled greatly.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p3react" id="p_121p3react4" value="4">
-                    <label class="form-check-label" for="p_121p3react4">I was able to solve the problem with a little difficulty.</label>
-                </div>
-                <div class="form-check">
-                    <input autocomplete="off" class="form-check-input" type="radio" name="p_121p3react" id="p_121p3react5" value="5">
-                    <label class="form-check-label" for="p_121p3react5">I was able to solve the problem with no difficulty.</label>
-                </div>
-            </div>
-        </div>
-
         
 
       <div id="results">
@@ -630,51 +231,110 @@ input_loop()</code></pre>
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-exp" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 1pm with Xinchen</span></h1>
+            <h1><span class="badge bg-success">CSC 110 for students with some coding experience</span></h1>
             <p>
-                Since you have taken a CSC course before, you should take CSC 110 1pm for students with some previous experience in coding.
+              In Fall 2023, there will be three sections of CSC 110:
+              <ul>
+                <li>1pm taught by Xinchen Yu are for students who have some previous coding experience</li>
+                <li>1pm taught by Adriana Picoral are for students who are new to coding</li>
+                <li>2pm taught by Xinchen Yu assumes no previous coding experience, and both students who have some coding experience and students new to coding are welcome to attend this section</li>
+              </ul>
+            </p>
+            <p>
+              The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives. This distinction in sections does not mean that any section is harder or easier than the others -- all assessment (including assignments and exams) are the same.
+            </p>
+            <p>
+                Since you have taken a CSC course before, you should take CSC 110 1pm for students with some previous experience in coding, or CSC 110 at 2pm. 
+            </p>
+             <p>
+              
+              If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-noexp" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 1pm with Adriana</span></h1>
+            <h1><span class="badge bg-success">CSC 110 1pm for students who are new to coding.</span></h1>
             <p>
-                Since you are new to coding, you should take CSC 110 1pm with Adriana.
+              In Fall 2023, there will be three sections of CSC 110:
+              <ul>
+                <li>1pm taught by Xinchen Yu are for students who have some previous coding experience</li>
+                <li>1pm taught by Adriana Picoral are for students who are new to coding</li>
+                <li>2pm taught by Xinchen Yu assumes no previous coding experience, and both students who have some coding experience and students new to coding are welcome to attend this section</li>
+              </ul>
+            </p>
+            <p>
+              The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives. This distinction in sections does not mean that any section is harder or easier than the others -- all assessment (including assignments and exams) are the same.
+            </p>
+            <p>
+                Since you are new to coding, we recomment you take CSC 110 1pm with Adriana Picoral or 2pm with Xinchen Yu.
+            </p>
+             <p>
+              
+              If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
         </div>
         
-        <div class="mb-3 alert alert-success result" role="alert" id="result-110-2pm" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 2pm with Xinchen</span></h1>
-            <p>
-                You should take CSC 110 at 2pm.
-            </p>
-        </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-120" style="display:none">
             <h1><span class="badge bg-success">CSC 120</span></h1>
             <p>
                 Since you have a satisfactory AP score, you can enroll in CSC 120.
             </p>
+            <p>
+              	
+CSC 120 provides a continuing introduction to programming with an emphasis on problem solving. It considers problems drawn from a variety of domains (including Computer Science) and emphasizes both the broader applicability of the relevant data structures and programming concepts, as well as the implementation of those structures and concepts in software. Topics include arrays, lists, stacks, queues, trees, searching and sorting, and exceptions.
+            </p>
+            <p>
+              
+              If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
+            </p>
         </div>
         
         
        
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-topics" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 1pm with Adriana</span></h1>
-            <p>
-                Although you have some previous programming experience, it sounds like you're still not entirely confident with some
-                topics. We recommend you take CSC 110 1pm with Adriana to help you solidfy your understanding of that material.
+            <h1><span class="badge bg-success">CSC 110 for students who are new to coding</span></h1>
+             <p>
+              In Fall 2023, there will be three sections of CSC 110:
+              <ul>
+                <li>1pm taught by Xinchen Yu are for students who have some previous coding experience</li>
+                <li>1pm taught by Adriana Picoral are for students who are new to coding</li>
+                <li>2pm taught by Xinchen Yu assumes no previous coding experience, and both students who have some coding experience and students new to coding are welcome to attend this section</li>
+              </ul>
             </p>
             <p>
-                If you have any more questions, feel free to reach out to our course placement advising team.
+              The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives. This distinction in sections does not mean that any section is harder or easier than the others -- all assessment (including assignments and exams) are the same.
+            </p>
+            <p>
+                Although you have some previous programming experience, it sounds like you're still not entirely confident with some
+                topics. We recommend you take CSC 110 1pm with Adriana Picoral or CSC 110 2pm with Xinchen Yu to help you solidfy your understanding of that material.
+            </p>
+             <p>
+              
+              If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
         </div>
         
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-exp-topics" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 1pm with Xinchen</span></h1>
+            <h1><span class="badge bg-success">CSC 110 for students with coding experience</span></h1>
             <p>
-                Since you have some experience with coding, you should take CSC 110 at 1pm.
+              In Fall 2023, there will be three sections of CSC 110:
+              <ul>
+                <li>1pm taught by Xinchen Yu are for students who have some previous coding experience</li>
+                <li>1pm taught by Adriana Picoral are for students who are new to coding</li>
+                <li>2pm taught by Xinchen Yu assumes no previous coding experience, and both students who have some coding experience and students new to coding are welcome to attend this section</li>
+              </ul>
+            </p>
+            <p>
+              The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives. This distinction in sections does not mean that any section is harder or easier than the others -- all assessment (including assignments and exams) are the same.
+            </p>
+            <p>
+                Since you have some experience with coding, you should take CSC 110 at 1pm with Xinchen Yu or CSC 110 at 2pm.
+            </p>
+             <p>
+              
+              If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
         </div>
 
