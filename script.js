@@ -69,7 +69,7 @@ function checkLastCouse(event) {
             showQuestion(event, $(event.target), $('#result-110-exp'));
             break;
         case 'CSC-110-pass':
-            showQuestion(event, $(event.target), $('#result-120'));
+            showQuestion(event, $(event.target), $('#result-120-from110'));
             break;
         default:
             $('select[name="110vars"]').prop('selectedIndex', 0);
@@ -90,7 +90,7 @@ function checkAPGrade(event) {
     switch (grade) {
         case '4':
         case '5':
-          showQuestion(event, $(event.target), $('#result-120'));
+          showQuestion(event, $(event.target), $('#result-120-ap'));
           break;
         case 'X':
             $('select[name="110vars"]').prop('selectedIndex', 0);
