@@ -65,8 +65,11 @@ function checkLastCouse(event) {
         case 'CSC-101':
             showQuestion(event, $(event.target), $('#result-110-exp'));
             break;
-        case 'CSC-110':
+        case 'CSC-110-fail':
             showQuestion(event, $(event.target), $('#result-110-exp'));
+            break;
+        case 'CSC-110-pass':
+            showQuestion(event, $(event.target), $('#result-120'));
             break;
         default:
             $('select[name="110vars"]').prop('selectedIndex', 0);
