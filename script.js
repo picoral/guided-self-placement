@@ -2,18 +2,17 @@ $(document).ready(function() {
     $('button#start-btn').click(() => $('#main').show() );
 
     $('input[name="mathRequire"]').change(checkMathReq);
-    
     $('input[name="previousCourse"]').change(checkPrevCourse);
     $('input[name="previousExp"]').change(checkPrevExp);
     $('select[name="lastCourse"]').change(checkLastCouse);
     $('input[name="apScore"]').change(checkAPGrade);
     $('#topics-110').find('select').change(check110Topics);
-
     $('input[name^="p_121p"]').change(check121Problem);
 
 });
 
 function checkMathReq(event) {
+    $('input[name="previousCourse"]').prop('checked', 0);
     let resp = $('input[name="mathRequire"]:checked').val();
     console.log(resp);
     if (resp == 'No') {
@@ -26,6 +25,8 @@ function checkMathReq(event) {
 
 
 function checkPrevCourse(event) {
+    $('input[name="previousExp"]').prop('checked', 0);
+    $('select[name="lastCourse"]').prop('selectedIndex', 0);
     let resp = $('input[name="previousCourse"]:checked').val();
     console.log(resp);
     if (resp == 'Yes') {
@@ -41,6 +42,11 @@ function checkPrevExp(event) {
     if (resp == 'No') {
         showQuestion(event, $(event.target), $('#result-110-noexp'));
     } else {
+        $('select[name="110vars"]').prop('selectedIndex', 0);
+        $('select[name="110types"]').prop('selectedIndex', 0);
+        $('select[name="110funcs"]').prop('selectedIndex', 0);
+        $('select[name="110loops"]').prop('selectedIndex', 0);
+        $('select[name="110conds"]').prop('selectedIndex', 0);
         showQuestion(event, $(event.target), $('#topics-110'));
     }
 }
@@ -53,6 +59,7 @@ function checkLastCouse(event) {
     console.log(course);
     switch(course) {
         case 'AP-A':
+            $('input[name="apScore"]').prop('checked', 0);
             showQuestion(event, $(event.target), $('#apScore'));
             break;
         case 'CSC-101':
@@ -61,11 +68,12 @@ function checkLastCouse(event) {
         case 'CSC-110':
             showQuestion(event, $(event.target), $('#result-110-exp'));
             break;
-        // case 'ECS':
-        // case 'AP-P':
-        //     showQuestion(event, $(event.target), $('#result-adv'))
-        //     break;
         default:
+            $('select[name="110vars"]').prop('selectedIndex', 0);
+            $('select[name="110types"]').prop('selectedIndex', 0);
+            $('select[name="110funcs"]').prop('selectedIndex', 0);
+            $('select[name="110loops"]').prop('selectedIndex', 0);
+            $('select[name="110conds"]').prop('selectedIndex', 0);
             showQuestion(event, $(event.target), $('#topics-110'));
             break;
     }
@@ -82,9 +90,19 @@ function checkAPGrade(event) {
           showQuestion(event, $(event.target), $('#result-120'));
           break;
         case 'X':
+            $('select[name="110vars"]').prop('selectedIndex', 0);
+            $('select[name="110types"]').prop('selectedIndex', 0);
+            $('select[name="110funcs"]').prop('selectedIndex', 0);
+            $('select[name="110loops"]').prop('selectedIndex', 0);
+            $('select[name="110conds"]').prop('selectedIndex', 0);
             showQuestion(event, $(event.target), $('#topics-110'));
             break;
         default:
+            $('select[name="110vars"]').prop('selectedIndex', 0);
+            $('select[name="110types"]').prop('selectedIndex', 0);
+            $('select[name="110funcs"]').prop('selectedIndex', 0);
+            $('select[name="110loops"]').prop('selectedIndex', 0);
+            $('select[name="110conds"]').prop('selectedIndex', 0);
             showQuestion(event, $(event.target), $('#topics-110'));
             break;
     }
@@ -110,6 +128,7 @@ function check110Topics(event) {
 function showQuestion(event, prev, target) {
     // hide all later questions
     prev.parents('.question').nextAll('.question').hide();
+    
 
     // hide results
     $('.result').hide();
