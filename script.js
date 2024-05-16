@@ -7,7 +7,6 @@ $(document).ready(function() {
     $('select[name="lastCourse"]').change(checkLastCouse);
     $('input[name="apScore"]').change(checkAPGrade);
     $('#topics-110').find('select').change(check110Topics);
-    $('input[name^="p_121p"]').change(check121Problem);
 
 });
 
