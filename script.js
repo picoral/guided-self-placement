@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('button#start-btn').click(() => $('#main').show() );
+    
 
     $('input[name="mathRequire"]').change(checkMathReq);
     $('input[name="previousCourse"]').change(checkPrevCourse);
@@ -9,6 +10,7 @@ $(document).ready(function() {
     $('#topics-110').find('select').change(check110Topics);
 
 });
+
 
 function checkMathReq(event) {
     $('input[name="previousCourse"]').prop('checked', 0);
@@ -128,6 +130,7 @@ function check110Topics(event) {
 
 
 function showQuestion(event, prev, target) {
+        
     // hide all later questions
     prev.parents('.question').nextAll('.question').hide();
     
@@ -152,3 +155,159 @@ function showNextQuestion(event, prev) {
     showQuestion(event, prev, prev.parents('.question').next('.question'));
 }
 
+
+function download(thisId) {
+  var content = 'Computer Science guided self-placement results\n';
+  content += '---------------------------------------------------------\n\n';
+  
+  let respMath = $('input[name="mathRequire"]:checked').val();
+  content += 'Do you have the math requirement or have you successfuly completed CSC 101 (with a grade of C or higher)?\n';
+  content += respMath + "\n";
+  
+  let respPrevious = $('input[name="previousCourse"]:checked').val();
+  if (respPrevious) {
+    content += 'Have you taken a previous computer science course?\n';
+    content += respPrevious + "\n";
+  }
+  
+  let respExp = $('input[name="previousExp"]:checked').val();
+  if (respExp) {
+    content += 'Do you have previous programming experience outside of a course?\n'
+    content += respExp + "\n";
+  }
+  
+  let course = $('select[name="lastCourse"]').val();
+  if (course) {
+    content += 'What is the most recent computer science course you have completed?\n'
+    content += course + "\n";
+  }
+  
+  
+  let grade = $('input[name="apScore"]:checked').val();
+  if (grade) {
+    content += 'What was your score on the AP Computer Science A exam?\n'
+    content += grade + "\n";
+  }
+  
+  
+  let topics = $('#topics-110').find('select');
+  let responses = topics.get().map(x => $(x).val());
+  if (responses[0]) {
+    content += '\nHow familiar and comfortable are you with each of the following programming topics/constructs?\n';
+    content += '\nVariables and assignment statements\n'
+    switch (responses[0]) {
+        case '0':
+          content += 'I have never heard of this.';
+          break;
+        case '1':
+          content += "I have heard of this but don't know what it is or don't understand it.";
+          break;
+        case '2':
+          content += 'I know what this is but I am not comfortable using it in programming.';
+          break;
+        case '3':
+          content += 'I am somewhat comfortable using this in programming.';
+          break;
+        case '4':
+          content += 'I am entirely comfortable using this in programming.';
+          break;
+    }
+    
+    content += '\n\nData types\n'
+    switch (responses[1]) {
+        case '0':
+          content += 'I have never heard of this.';
+          break;
+        case '1':
+          content += "I have heard of this but don't know what it is or don't understand it.";
+          break;
+        case '2':
+          content += 'I know what this is but I am not comfortable using it in programming.';
+          break;
+        case '3':
+          content += 'I am somewhat comfortable using this in programming.';
+          break;
+        case '4':
+          content += 'I am entirely comfortable using this in programming.';
+          break;
+    }
+    
+    content += '\n\nLoops\n'
+    switch (responses[2]) {
+        case '0':
+          content += 'I have never heard of this.';
+          break;
+        case '1':
+          content += "I have heard of this but don't know what it is or don't understand it.";
+          break;
+        case '2':
+          content += 'I know what this is but I am not comfortable using it in programming.';
+          break;
+        case '3':
+          content += 'I am somewhat comfortable using this in programming.';
+          break;
+        case '4':
+          content += 'I am entirely comfortable using this in programming.';
+          break;
+    }
+    
+    content += '\n\nConditionals\n'
+    switch (responses[3]) {
+        case '0':
+          content += 'I have never heard of this.';
+          break;
+        case '1':
+          content += "I have heard of this but don't know what it is or don't understand it.";
+          break;
+        case '2':
+          content += 'I know what this is but I am not comfortable using it in programming.';
+          break;
+        case '3':
+          content += 'I am somewhat comfortable using this in programming.';
+          break;
+        case '4':
+          content += 'I am entirely comfortable using this in programming.';
+          break;
+    }
+    
+    content += '\n\nFunctions and/or methods\n'
+    switch (responses[4]) {
+        case '1':
+          content += 'I have never heard of this.';
+          break;
+        case '2':
+          content += "I have heard of this but don't know what it is or don't understand it.";
+          break;
+        case '3':
+          content += 'I know what this is but I am not comfortable using it in programming.';
+          break;
+        case '4':
+          content += 'I am somewhat comfortable using this in programming.';
+          break;
+        case '5':
+          content += 'I am entirely comfortable using this in programming.';
+          break;
+    }
+  }
+  
+  
+  content += '\n\nResult:\n\n'
+  content += document.getElementById(thisId).innerText;
+  
+  
+  var file = new File([content],
+          'csc-placement-results.txt', {
+          type: 'text/plain',
+        })
+        
+  const link = document.createElement('a')
+  const url = URL.createObjectURL(file)
+
+  link.href = url
+  link.download = file.name
+  document.body.appendChild(link)
+  link.click()
+
+  document.body.removeChild(link)
+  window.URL.revokeObjectURL(url)
+}
