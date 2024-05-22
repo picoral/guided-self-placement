@@ -65,7 +65,7 @@ function checkLastCouse(event) {
             showQuestion(event, $(event.target), $('#result-110-exp'));
             break;
         case 'CSC-110-fail':
-            showQuestion(event, $(event.target), $('#result-110-exp'));
+            showQuestion(event, $(event.target), $('#result-110-retake'));
             break;
         case 'CSC-110-pass':
             showQuestion(event, $(event.target), $('#result-120-from110'));

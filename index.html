@@ -61,7 +61,7 @@
         </p>
 
         <p>When you're ready, click the button below to begin.</p>
-        <button type="button" class="btn btn-success" id="start-btn">Begin Self-Assessment</button>
+        <button type="button" class="btn btn-success" id="start-btn">Begin Self-Placement</button>
       </div>
 
 
@@ -69,7 +69,10 @@
         
         <div class="mb-3 question" id="mathReq">
             <label class="form-label" for="mathRequire">Do you have the math requirement or have you successfuly completed CSC 101 (with a grade of C or higher)?</label>
-            <p>The math requirement is satisfied by either a standardized exam (PPL 60+ or SAT I MSS 640+ or ACT MATH 26+) or by a C or higher grade in a college algebra course (MATH 112, MATH 108, or MATH 120R), or a calculus course (MATH 113, 116, 122A, 122B, or 125).</p>
+            <p>The math requirement is satisfied by either a standardized exam or by a C or higher grade in a college algebra course.</p>
+            <p>
+              For more information on MATH courses, access the <a href="https://www.math.arizona.edu/academics/placement/courses">Math Course Placement website</a>.
+            </p>
             <div class="form-check">
                 <input autocomplete="off" class="form-check-input" type="radio" name="mathRequire" id="mathRequireYes" value="Yes">
                 <label class="form-check-label" for="mathRequireYes">Yes</label>
@@ -110,12 +113,12 @@
             <label class="form-label" for="lastCourse">What is the most recent computer science course you have completed?</label>
             <select class="form-select" name="lastCourse" aria-label="Most recent course">
                 <option value="" selected disabled>Select an option</option>
-                <option value="AP-A">Advanced Placement (AP) Computer Science A</option>
                 <option value="AP-P">Advanced Placement (AP) Computer Science Principles</option>
+                <option value="AP-A">Advanced Placement (AP) Computer Science A</option>
                 <option value="CSC-101">CSC 101 (with a grade of C or higher)</option>
                 <option value="CSC-110-fail">CSC 110 (E or D grade)</option>
                 <option value="CSC-110-pass">CSC 110 (A, B or C grade)</option>
-                <option value="Other">Other</option>
+                <option value="Other">Other (including any transfer credit)</option>
             </select>
         </div>
 
@@ -176,17 +179,7 @@
                     <option value="4">I am entirely comfortable using this in programming.</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="110funcs" id="funcLabel">Functions and/or methods</label>
-                <select class="form-select" name="110funcs">
-                    <option value="" selected disabled>Select an option</option>
-                    <option value="1">I have never heard of this.</option>
-                    <option value="2">I have heard of this but don't know what it is or don't understand it.</option>
-                    <option value="3">I know what this is but I am not comfortable using it in programming.</option>
-                    <option value="4">I am somewhat comfortable using this in programming.</option>
-                    <option value="5">I am entirely comfortable using this in programming.</option>
-                </select>
-            </div>
+            
             <div class="mb-3">
                 <label for="110loops" id="loopLabel">Loops</label>
                 <select class="form-select" name="110loops">
@@ -209,6 +202,17 @@
                     <option value="4">I am entirely comfortable using this in programming.</option>
                 </select>
             </div>
+            <div class="mb-3">
+                <label for="110funcs" id="funcLabel">Functions and/or methods</label>
+                <select class="form-select" name="110funcs">
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="1">I have never heard of this.</option>
+                    <option value="2">I have heard of this but don't know what it is or don't understand it.</option>
+                    <option value="3">I know what this is but I am not comfortable using it in programming.</option>
+                    <option value="4">I am somewhat comfortable using this in programming.</option>
+                    <option value="5">I am entirely comfortable using this in programming.</option>
+                </select>
+            </div>
             
         </div>
         
@@ -216,9 +220,9 @@
       <div id="results">
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-101" style="display:none">
-            <h1><span class="badge bg-success">CSC 101</span></h1>
+            <h1><span class="badge bg-success">CSC 101 Introduction to Computer Science</span></h1>
             <p>
-                Since you do not have college algebra, <b>you should take CSC 101</b>.
+                Since you do not have college algebra, <b>you should take CSC 101 Introduction to Computer Science</b>.
             </p>
             <p>
               This course is intended for students who have no prior programming experience. Several core concepts in computer science will be presented, including problem-solving techniques, data representation, logic, and the physical components of computer hardware. Students will leave this course with basic programming and problem-solving skills, increased technical literacy, and a greater ability to recognize problems that can be solved with technology.
@@ -230,8 +234,9 @@
             </p>
         </div>
         
-        <div class="mb-3 alert alert-success result" role="alert" id="result-110-exp" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 for students with some coding experience</span></h1>
+        <div class="mb-3 alert alert-success result" role="alert" id="result-110-retake" style="display:none">
+            <h1><span class="badge bg-success">CSC 110 Introduction to Computer Programming I Sections 002 or 003</span></h1>
+            <p>CSC 110 Introduction to Computer Programming I for students with coding experience (Sections 002 or 003).</p>
             <p>
               In Fall 2024, there will be three sections of CSC 110:
               <ul>
@@ -244,9 +249,36 @@
               The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives and outcomes. This distinction in sections does not mean that any section is harder or easier than the others -- all assessments (including assignments and exams) are the same.
             </p>
             <p>
-                Since you have taken a CSC course before, <b>we recommend you take CSC 110 1pm with Xinchen Yu (Section 002), or CSC 110 at 2pm (Section 003)</b>. 
+                Since you have taken CSC 110 before, <b>we recommend you take or switch into CSC 110 1pm with Xinchen Yu (Section 002 - for students who have some experience coding), or CSC 110 at 2pm (Section 003 - for all students)</b>. 
             </p>
-            <p>You are free to enroll in CSC 110 at 1pm with Adriana Picoral instead (Section 001), if you prefer to be in a section with students who are new to coding.</p>
+            <p>
+              Make sure you consider applying for a <a href="https://registrar.arizona.edu/records-enrollment/enrollment/grade-replacement-opportunity-gro-repeats">Grade Replacement Opportunity (GRO)</a>.
+            </p>
+            <p>You are free to enroll in CSC 110 at 1pm with Adriana Picoral instead (Section 001 - for students who are new to coding), if you prefer to be in a section with students who are new to coding.</p>
+             <p>
+              
+              If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
+            </p>
+        </div>
+        
+        <div class="mb-3 alert alert-success result" role="alert" id="result-110-exp" style="display:none">
+            <h1><span class="badge bg-success">CSC 110 Introduction to Computer Programming I Sections 002 or 003</span></h1>
+            <p>CSC 110 Introduction to Computer Programming I for students with coding experience (Sections 002 or 003).</p>
+            <p>
+              In Fall 2024, there will be three sections of CSC 110:
+              <ul>
+                <li>Section 001 - 1pm taught by Adriana Picoral is for students who are new to coding</li>
+                <li>Section 002 - 1pm taught by Xinchen Yu is for students who have some previous coding experience</li>
+                <li>Section 003 - 2pm taught by Xinchen Yu assumes no previous coding experience, and both students who have some coding experience and students new to coding are welcome to attend this section</li>
+              </ul>
+            </p>
+            <p>
+              The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives and outcomes. This distinction in sections does not mean that any section is harder or easier than the others -- all assessments (including assignments and exams) are the same.
+            </p>
+            <p>
+                Since you have taken a CSC course before, <b>we recommend you take or switch into CSC 110 1pm with Xinchen Yu (Section 002 - for students who have some experience coding), or CSC 110 at 2pm (Section 003 - for all students)</b>. 
+            </p>
+            <p>You are free to enroll in CSC 110 at 1pm with Adriana Picoral instead (Section 001 - for students who are new to coding), if you prefer to be in a section with students who are new to coding.</p>
              <p>
               
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
@@ -254,7 +286,8 @@
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-noexp" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 1pm for students who are new to coding.</span></h1>
+            <h1><span class="badge bg-success">CSC 110 Introduction to Computer Programming Sections 001 or 003.</span></h1>
+            <p>CSC 110 Introduction to Computer Programming for students who are new to coding (Sections 001 or 003)</p>
             <p>
               In Fall 2024, there will be three sections of CSC 110:
               <ul>
@@ -267,7 +300,7 @@
               The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives and outcomes. This distinction in sections does not mean that any section is harder or easier than the others -- all assessments (including assignments and exams) are the same.
             </p>
             <p>
-                Since you are new to coding, <b>we recommend you take CSC 110 1pm with Adriana Picoral (Section 001) or 2pm with Xinchen Yu (Section 003)</b>.
+                Since you are new to coding, <b>we recommend you take or switch into CSC 110 1pm with Adriana Picoral (Section 001  - for students who are new to coding) or 2pm with Xinchen Yu (Section 003 - for all students)</b>.
             </p>
              <p>
               
@@ -277,9 +310,9 @@
         
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-120-ap" style="display:none">
-            <h1><span class="badge bg-success">CSC 120</span></h1>
+            <h1><span class="badge bg-success">CSC 120 Introduction to Computer Programming II</span></h1>
             <p>
-                Since you have a satisfactory AP score, <b>you can enroll in CSC 120</b>. Note that CSC 110 and CSC 120 are both taught in Python. You might consider taking CSC 110 instead, which provides an introduction to Python.
+                Since you have a satisfactory AP score, <b>you are allowed to enroll in CSC 120 Introduction to Computer Programming II</b>. Note that CSC 110 and CSC 120 are both taught in Python. You might consider taking CSC 110 instead, which provides an introduction to Python. If you do not have any experience with Python we recommend you take CSC 110 instead.
             </p>
             <p>
               	
@@ -292,9 +325,9 @@ CSC 120 provides a continuing introduction to programming in Python with an emph
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-120-from110" style="display:none">
-            <h1><span class="badge bg-success">CSC 120</span></h1>
+            <h1><span class="badge bg-success">CSC 120 Introduction to Computer Programming II</span></h1>
             <p>
-                Since you have passed CSC 110, <b>you can enroll in CSC 120</b>.
+                Since you have passed CSC 110, <b>you can enroll in CSC 120 (Introduction to Computer Programming II)</b>.
             </p>
             <p>
               	
@@ -309,7 +342,9 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
         
        
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-topics" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 for students who are new to coding</span></h1>
+            <h1><span class="badge bg-success">CSC 110 Introduction to Computer Programming I Sections 001 or 003</span></h1>
+            <p>CSC 110 Introduction to Computer Programming for students who are new to coding (Sections 001 or 003)</p>
+            
              <p>
               In Fall 2024, there will be three sections of CSC 110:
               <ul>
@@ -323,7 +358,7 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
             </p>
             <p>
                 Although you have some previous programming experience, it sounds like you're still not entirely confident with some
-                topics. <b>We recommend you take CSC 110 1pm with Adriana Picoral (Section 001) or CSC 110 2pm with Xinchen Yu (Section 003)</b> to help you solidfy your understanding of that material.
+                topics. <b>We recommend you take or switch into CSC 110 1pm with Adriana Picoral (Section 001 - for students who are new to coding) or CSC 110 2pm with Xinchen Yu (Section 003 - for all students)</b> to help you solidfy your understanding of that material.
             </p>
              <p>
               
@@ -333,7 +368,9 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
         
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-exp-topics" style="display:none">
-            <h1><span class="badge bg-success">CSC 110 for students with coding experience</span></h1>
+            <h1><span class="badge bg-success">CSC 110 Introduction to Computer Programming I Sections 002 or 003</span></h1>
+            <p>CSC 110 Introduction to Computer Programming I for students with coding experience (Sections 002 or 003).</p>
+            
             <p>
               In Fall 2024, there will be three sections of CSC 110:
               <ul>
@@ -346,9 +383,9 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
               The different sections for different students (those with coding experience vs. those new to coding) are all the same difficulty, and have the same learning objectives and outcomes. This distinction in sections does not mean that any section is harder or easier than the others -- all assessments (including assignments and exams) are the same.
             </p>
             <p>
-                Since you have some experience with coding, <b>you should take CSC 110 at 1pm with Xinchen Yu (Section 002) or CSC 110 at 2pm (Section 003)</b>.
+                Since you have some experience with coding, <b>you should take CSC 110 at 1pm with Xinchen Yu (Section 002  - for students who have some experience coding) or CSC 110 at 2pm (Section 003 - for all students)</b>.
             </p>
-            <p>You are free to enroll in CSC 110 at 1pm with Adriana Picoral instead (Section 001), if you prefer to be in a section with students who are new to coding.</p>
+            <p>You are free to enroll in CSC 110 at 1pm with Adriana Picoral instead (Section 001 - for students who are new to coding), if you prefer to be in a section with students who are new to coding.</p>
              <p>
               
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
@@ -368,7 +405,7 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
     </div>
     <footer>
         <hr />
-        <em><small>Last updated: May 16, 2024</small></em>
+        <em><small>Last updated: May 21, 2024</small></em>
     </footer>
     </main>
   </body>
