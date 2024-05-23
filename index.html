@@ -57,7 +57,7 @@ This self-placement survey will <em>adapt</em> to your answers. The questions yo
       <form style="display:none" id="main">
         
         <div class="mb-3 question" id="mathReq">
-            <label class="form-label" for="mathRequire">Do you have the math requirement or have you successfuly completed CSC 101 (with a grade of C or higher)?</label>
+            <label class="form-label" for="mathRequire">Do you have the math requirement or have you successfully completed CSC 101 (with a grade of C or higher)?</label>
             <p>The math requirement is satisfied by either a standardized exam or by a C or higher grade in a college algebra course.</p>
             <p>
               For more information on MATH courses, access the <a href="https://www.math.arizona.edu/academics/placement/courses">Math Course Placement website</a>.
@@ -221,6 +221,10 @@ This self-placement survey will <em>adapt</em> to your answers. The questions yo
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-101')">Download Your Results</button>
+            
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
+            
+    
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-retake" style="display:none">
@@ -249,6 +253,7 @@ This self-placement survey will <em>adapt</em> to your answers. The questions yo
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-110-retake')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-exp" style="display:none">
@@ -274,6 +279,7 @@ This self-placement survey will <em>adapt</em> to your answers. The questions yo
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-110-exp')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-110-noexp" style="display:none">
@@ -298,6 +304,7 @@ This self-placement survey will <em>adapt</em> to your answers. The questions yo
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-110-noexp')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
         </div>
         
         
@@ -315,6 +322,7 @@ CSC 120 provides a continuing introduction to programming in Python with an emph
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-120-ap')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
         </div>
         
         <div class="mb-3 alert alert-success result" role="alert" id="result-120-from110" style="display:none">
@@ -331,6 +339,7 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-120-from110')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
         </div>
         
         
@@ -359,6 +368,7 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-110-topics')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
         </div>
         
         
@@ -386,6 +396,7 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
               If you have any more questions, feel free to reach out to <a href="https://www.cs.arizona.edu/undergraduate/advising">our advising team</a>. 
             </p>
             <button type="button" class="btn btn-success" onclick="download('result-110-exp-topics')">Download Your Results</button>
+            <button type="button" class="btn btn-success" onclick="sendEmail('result-101')">Email Advising</button>
             
         </div>
 
@@ -402,7 +413,7 @@ CSC 120 provides a continuing introduction to programming with an emphasis on pr
     </div>
     <footer>
         <hr />
-        <em><small>Last updated: May 22, 2024</small></em>
+        <em><small>Last updated: May 23, 2024</small></em>
     </footer>
     </main>
   </body>

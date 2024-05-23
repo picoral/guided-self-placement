@@ -155,46 +155,45 @@ function showNextQuestion(event, prev) {
     showQuestion(event, prev, prev.parents('.question').next('.question'));
 }
 
-
-function download(thisId) {
-  var content = 'Computer Science guided self-placement results\n';
-  content += '---------------------------------------------------------\n\n';
+function buildContent(thisId, lineBreakChar) {
+  var content = 'Computer Science guided self-placement results' + lineBreakChar;
+  content += '---------------------------------------------------------' + lineBreakChar + lineBreakChar;
   
   let respMath = $('input[name="mathRequire"]:checked').val();
-  content += 'Do you have the math requirement or have you successfuly completed CSC 101 (with a grade of C or higher)?\n';
-  content += respMath + "\n";
+  content += 'Do you have the math requirement or have you successfully completed CSC 101 (with a grade of C or higher)?';
+  content += lineBreakChar + respMath + lineBreakChar;
   
   let respPrevious = $('input[name="previousCourse"]:checked').val();
   if (respPrevious) {
-    content += 'Have you taken a previous computer science course?\n';
-    content += respPrevious + "\n";
+    content += 'Have you taken a previous computer science course?' + lineBreakChar;
+    content += respPrevious + lineBreakChar;
   }
   
   let respExp = $('input[name="previousExp"]:checked').val();
   if (respExp) {
-    content += 'Do you have previous programming experience outside of a course?\n'
-    content += respExp + "\n";
+    content += 'Do you have previous programming experience outside of a course?' + lineBreakChar;
+    content += respExp + lineBreakChar;
   }
   
   let course = $('select[name="lastCourse"]').val();
   if (course) {
-    content += 'What is the most recent computer science course you have completed?\n'
-    content += course + "\n";
+    content += 'What is the most recent computer science course you have completed?' + lineBreakChar;
+    content += course + lineBreakChar;
   }
   
   
   let grade = $('input[name="apScore"]:checked').val();
   if (grade) {
-    content += 'What was your score on the AP Computer Science A exam?\n'
-    content += grade + "\n";
+    content += 'What was your score on the AP Computer Science A exam?' + lineBreakChar;
+    content += grade + lineBreakChar;
   }
   
   
   let topics = $('#topics-110').find('select');
   let responses = topics.get().map(x => $(x).val());
   if (responses[0]) {
-    content += '\nHow familiar and comfortable are you with each of the following programming topics/constructs?\n';
-    content += '\nVariables and assignment statements\n'
+    content += lineBreakChar + 'How familiar and comfortable are you with each of the following programming topics/constructs?' + lineBreakChar;
+    content += lineBreakChar + 'Variables and assignment statements' + lineBreakChar;
     switch (responses[0]) {
         case '0':
           content += 'I have never heard of this.';
@@ -213,7 +212,8 @@ function download(thisId) {
           break;
     }
     
-    content += '\n\nData types\n'
+    content += lineBreakChar + lineBreakChar;
+    content += 'Data types' + lineBreakChar;
     switch (responses[1]) {
         case '0':
           content += 'I have never heard of this.';
@@ -232,7 +232,8 @@ function download(thisId) {
           break;
     }
     
-    content += '\n\nLoops\n'
+    content += lineBreakChar + lineBreakChar;
+    content += 'Loops' + lineBreakChar;
     switch (responses[2]) {
         case '0':
           content += 'I have never heard of this.';
@@ -251,7 +252,8 @@ function download(thisId) {
           break;
     }
     
-    content += '\n\nConditionals\n'
+    content += lineBreakChar + lineBreakChar;
+    content += 'Conditionals' + lineBreakChar;
     switch (responses[3]) {
         case '0':
           content += 'I have never heard of this.';
@@ -270,7 +272,8 @@ function download(thisId) {
           break;
     }
     
-    content += '\n\nFunctions and/or methods\n'
+    content += lineBreakChar + lineBreakChar;
+    content += 'Functions and/or methods' + lineBreakChar;
     switch (responses[4]) {
         case '1':
           content += 'I have never heard of this.';
@@ -290,12 +293,22 @@ function download(thisId) {
     }
   }
   
-  
-  content += '\n\nResult:\n\n'
+  content += lineBreakChar + lineBreakChar;
+  content += 'Result:' + lineBreakChar + lineBreakChar;
   content += document.getElementById(thisId).innerText;
   
+  return(content);
+}
   
-  var file = new File([content],
+function sendEmail(thisId) {
+    var content = "Dear advising,%0A%0AI'd like to schedule a meeting to discuss my guided self-placement results.%0A%0A";
+    content += buildContent(thisId, "%0A");
+    window.location.href = 'mailto:adrianaps@arizona.edu?subject=Placement%20Results&body=' + content;
+}
+
+function download(thisId) {
+  
+  var file = new File([buildContent(thisId, "\n")],
           'csc-placement-results.txt', {
           type: 'text/plain',
         })
