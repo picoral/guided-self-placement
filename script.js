@@ -303,7 +303,7 @@ function buildContent(thisId, lineBreakChar) {
 function sendEmail(thisId) {
     var content = "Dear advising,%0A%0AI'd like to schedule a meeting to discuss my guided self-placement results.%0A%0A";
     content += buildContent(thisId, "%0A");
-    window.location.href = 'mailto:adrianaps@arizona.edu?subject=Placement%20Results&body=' + content;
+    window.location.href = 'mailto:advising@cs.arizona.edu?subject=Placement%20Results&body=' + content;
 }
 
 function download(thisId) {
